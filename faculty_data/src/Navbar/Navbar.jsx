@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import Slider from "../Components/Slider";
 import "../Styling/Navbar.css"
 function Navbar(){
@@ -8,10 +9,10 @@ function Navbar(){
                       <div><b>Online College</b><br/>Faculty Data Management System</div>
             </div>
             <div className="nav-items">
-                        <div>HOME</div>
-                        <div>ABOUT</div>
-                        <div>FACULTIES</div>
-                        <div>ADMIN</div>
+                       <Link to="/"><div>HOME</div></Link>
+                       <Link to="/about"><div>ABOUT</div></Link>
+                        <Link to="/faculties"><div>FACULTIES</div></Link>
+                        <Link to="admin-login"><div>ADMIN</div></Link>
             </div>
           </div>
           <Slider/>

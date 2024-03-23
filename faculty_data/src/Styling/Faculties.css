@@ -1,0 +1,9 @@
+.outertext{
+    text-align: center;
+    font-family: sans-serif;
+    font-weight: 800;
+    font-size: 25px;
+    color:  white;
+    z-index: 1;
+    margin-top: -14%;
+}

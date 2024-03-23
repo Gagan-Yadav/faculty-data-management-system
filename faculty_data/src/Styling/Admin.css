@@ -1,0 +1,38 @@
+.admin-login{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgb(186, 222, 244);
+}
+.admin-main-container{
+    width: 25%;
+    height: 60vh;
+    text-align: center;
+    font-family: sans-serif;
+    border-radius: 10px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    background-color: white;
+}
+.admin-header{
+    font-weight: 800;
+    font-size: 35px;
+}
+.username{
+    width: 80%;
+    height: 5vh;
+    margin: 5px;
+    border-radius: 5px;
+
+}
+.singin-button-container{
+    display: flex;
+    justify-content: end;
+}
+.singin-button{
+    padding: 3% 10% 3% 10%;
+    margin: 2% 10% 0 0 ;
+    background-color: blue;
+    color: white;
+    border-radius: 5px;
+}
