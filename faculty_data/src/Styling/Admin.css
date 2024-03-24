@@ -33,6 +33,23 @@
     padding: 3% 10% 3% 10%;
     margin: 2% 10% 0 0 ;
     background-color: blue;
-    color: white;
     border-radius: 5px;
+}
+.singin-routing{
+    text-decoration: none;
+    color: white;
+}
+.home-and-forgot{
+    text-align: start;
+    color:  blue;
+    margin-left: 8%;
+}
+.admin-images{
+    padding: 5px;
+}
+.forgot-icon{
+    margin-bottom: -4%;
+}
+.home-icon{
+    text-decoration: none;
 }

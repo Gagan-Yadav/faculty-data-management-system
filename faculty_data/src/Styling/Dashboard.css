@@ -1,0 +1,32 @@
+.dashboard-main-container{
+    display: flex;
+    height: 100vh;
+    
+}
+
+.left-container{
+        width: 18%;
+        border: 1px solid white;
+        background-color: rgb(103, 102, 102);
+        font-family: sans-serif;
+        font-weight: 700;
+        color: white;
+}
+.right-container{
+    width: 82%;
+    border: 2px solid blue;
+}
+.dashboard-heading{
+       padding-left: 5%;
+}
+.dashboard-admin-logo{
+    padding-left: 5% ;
+    display: flex;
+    align-items: center;
+}
+.dashboard-text{
+    padding: 5%;
+}
+.dashboard-items{
+    padding-left: 2%;
+}

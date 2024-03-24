@@ -5,6 +5,7 @@ import Navbar from "../Navbar/Navbar"
 import About from "../Components/About"
 import Faculties from "../Components/Faculties"
 import Admin from "../Components/Admin"
+import Dashboard from "../Components/Dashboard"
 
 function RoutesComp(){
   
@@ -16,6 +17,7 @@ function RoutesComp(){
                 <Route path="/about" element={<About/>}/>
                 <Route path="/faculties" element={<Faculties/>}/>
                 <Route path="/admin-login" element={<Admin/>}/>
+                <Route path="/admin/dashboard" element={<Dashboard/>}/>
             </Routes>
        </div>
     </>
