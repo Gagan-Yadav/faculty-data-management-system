@@ -6,7 +6,8 @@ import About from "../Components/About"
 import Faculties from "../Components/Faculties"
 import Admin from "../Components/Admin"
 import Dashboard from "../Components/Dashboard"
-
+import AddSubAdmin from "../Components/Add-subadmin"
+import AddCollege from "../Components/Add-college"
 function RoutesComp(){
   
     return <>
@@ -18,8 +19,12 @@ function RoutesComp(){
                 <Route path="/faculties" element={<Faculties/>}/>
                 <Route path="/admin-login" element={<Admin/>}/>
                 <Route path="/admin/dashboard" element={<Dashboard/>}/>
+                <Route path="/admin/add-sub-admin" element={<AddSubAdmin/>}/>
+                <Route path="/admin/add-college" element={<AddCollege/>}/>
+                <Route path="/admin/add-faculty" element={<AddFaculty/>}/>
             </Routes>
        </div>
     </>
 }
+import AddFaculty from "../Components/Add-faculty"
 export default RoutesComp
