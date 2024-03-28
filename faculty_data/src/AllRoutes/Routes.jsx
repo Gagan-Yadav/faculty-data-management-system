@@ -22,9 +22,11 @@ function RoutesComp(){
                 <Route path="/admin/add-sub-admin" element={<AddSubAdmin/>}/>
                 <Route path="/admin/add-college" element={<AddCollege/>}/>
                 <Route path="/admin/add-faculty" element={<AddFaculty/>}/>
+                <Route path="/admin/manage-sub-admin" element={<ManageSubadmin/>}/>
             </Routes>
        </div>
     </>
 }
 import AddFaculty from "../Components/Add-faculty"
+import ManageSubadmin from "../Components/Manage-subadmins"
 export default RoutesComp

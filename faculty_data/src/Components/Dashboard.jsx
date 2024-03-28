@@ -53,9 +53,9 @@ function Dashboard(){
                     <Link to='/admin/add-sub-admin'>  <div className="add-manage-circle">
                        <div className="add-button"></div><span>Add</span>
                         </div></Link>
-                        <div className="add-manage-circle">
+                        <Link to="/admin/manage-sub-admin"><div className="add-manage-circle">
                         <div className="add-button"></div><span>Manage</span>
-                        </div>
+                        </div></Link>
                     </div>
                     <div  className="menu-items" onClick={()=>setCollege(!college)}>
                          <div className="menu-items-left-side">
