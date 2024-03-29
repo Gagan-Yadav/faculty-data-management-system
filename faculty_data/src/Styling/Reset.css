@@ -5,7 +5,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background:linear-gradient(red,yellow,red) ;
+    background:linear-gradient(rgb(0, 208, 255) ,yellow,rgb(255, 0, 0))
 }
 .admin-main-container{
     width: 25%;
