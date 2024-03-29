@@ -30,6 +30,7 @@ function RoutesComp(){
                 <Route path="/admin/contact-us" element={<AdminContact/>}/>
                 <Route path="/admin/profile" element={<AdminProfile/>}/>
                 <Route path="/admin/change-password" element={<AdminPassword/>}/>
+                <Route path="/admin/recovery-password" element={<Reset/>}/>
             </Routes>
        </div>
     </>
@@ -44,4 +45,5 @@ import AdminProfile from "../Components/Admin-profile"
 import AdminPassword from "../Components/Admin-chagepwd"
 import Home from "../Components/Home"
 import Contact from "../Components/Contact"
+import Reset from "../Components/Reset"
 export default RoutesComp

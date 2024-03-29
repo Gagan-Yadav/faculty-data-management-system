@@ -1,5 +1,6 @@
 
-.admin-login{
+
+.admin-reset{
     height: 100vh;
     display: flex;
     justify-content: center;
@@ -8,7 +9,7 @@
 }
 .admin-main-container{
     width: 25%;
-    height: 60vh;
+    height: 65vh;
     text-align: center;
     font-family: sans-serif;
     border-radius: 10px;
@@ -43,26 +44,13 @@
     border: none;
     color: white;
 }
-.singin-routing{
-    text-decoration: none;
-    color: white;
-}
-.home-and-forgot{
-    text-align: start;
-    color:  blue;
-    margin-left: 8%;
-}
-.admin-images{
-    padding: 5px;
 
+
+.signin{
+    text-align: left;
+    padding: 0 0 0 10%;
 }
-.forgot-icon{
-    margin-bottom: -4%;
-    color: blue;
-}
-.home-icon{
+.routes{
     text-decoration: none;
-}
-.home-navigator{
-    color:  blue;
+
 }

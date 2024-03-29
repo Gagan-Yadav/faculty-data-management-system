@@ -10,7 +10,7 @@
   margin-right: 6%;
 }
 .image-blur{
-    filter: blur(5px);
+    filter: blur(3px);
 }
 .heading{
     font-family: sans-serif;

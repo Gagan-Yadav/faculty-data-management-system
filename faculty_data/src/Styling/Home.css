@@ -64,6 +64,7 @@
     border-bottom-right-radius: 5px;
     height: 6vh;
     background-color: gray;
+    cursor: pointer;
 }
 #home-admin-form-container>div>div>div>span{
     padding: 5px;

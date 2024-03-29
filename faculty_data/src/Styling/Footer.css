@@ -1,6 +1,5 @@
 *{
     font-family: sans-serif;
-    color: white;
 }
 #footer-main-container{
     display: flex;
@@ -25,4 +24,5 @@
 }
 .links{
     text-decoration: none;
+    color: white;
 }
