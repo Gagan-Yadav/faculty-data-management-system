@@ -1,0 +1,71 @@
+*{
+    font-family: sans-serif;
+}
+.home-admin{
+    position: absolute;
+   z-index: 1;
+   margin: 5% 0 0 18%;
+   width: 79%;
+}
+.home-admin-header{
+    width: 100%;
+    display: flex;
+    justify-content:space-between ;
+    align-items: center;
+    padding: 1%;
+    margin-left: 1%;
+}
+
+.dashboard-navigate{
+    padding: 3px;
+}
+.sub-admin-heading{
+    font-size: 2rem;
+    font-weight: 600;
+}
+#home-admin-form-container{
+    width: 100%;
+   margin: 0 0 0 2%;
+  display: grid;
+  grid-template-columns: repeat(2,1fr);
+  
+}
+#home-admin-form-container>div{
+    border: 2px solid red;
+    margin: 0 2% 2% 0;
+    height: 21.9vh;
+    border-radius: 7px;
+
+}
+#home-admin-form-container>div:first-child{
+    background-color: rgb(69, 180, 223);
+ 
+}
+#home-admin-form-container>div:nth-child(2){
+    background-color: rgb(51, 163, 51);
+} 
+#home-admin-form-container>div:last-child{
+    background-color: rgb(242, 242, 68);
+}
+#home-admin-form-container>div>h1{
+    padding-left: 3%;
+    color: white;
+}
+#home-admin-form-container>div>p{
+    padding-left: 3%;
+    margin-top: -1%;
+    color:  white;
+}
+#home-admin-form-container>div>div>div{
+    border: 2px solid blue;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    height: 5vh;
+    background-color: gray;
+}
+#home-admin-form-container>div>div>div>span{
+    padding: 5px;
+}

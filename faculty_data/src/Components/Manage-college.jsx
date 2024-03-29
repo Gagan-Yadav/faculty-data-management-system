@@ -1,19 +1,18 @@
 import "../Styling/Manage-sub-admin.css"
 import Dashboard from "./Dashboard"
 import { Link } from "react-router-dom"
-import UpDown from "../assets/up-and-down-arrow.png"
 import { useState } from "react"
-function ManageSubadmin(){
+function ManageCollege(){
     let [show,setShow] =useState(false)
     return <>
      <Dashboard/>
                 <div className="manage-sub-admin">
                    <div className="manage-sub-admin-header">
-                    <div><span className="manage-admin-heading">Manage Sub Admins</span></div>
-                    <div><Link to="/admin/dashboard"><span  className="dashboard-navigate">Home</span> </Link>/ <span  className="dashboard-navigate">Manage Sub Admin</span></div>
+                    <div><span className="manage-admin-heading">Manage College</span></div>
+                    <div><Link to="/admin/dashboard"><span  className="dashboard-navigate">Home</span> </Link>/ <span  className="dashboard-navigate">Manage College</span></div>
                    </div>
                    <div id="manage-subadmin-form-container">
-                                <p>Sub Admin Details</p>
+                                <p>College Details</p>
                                 <hr />
                                 <div className="printing-and-searching">
                                     <div className="printing">
@@ -26,11 +25,10 @@ function ManageSubadmin(){
                                             <p className="dropbtn" onClick={()=>setShow(!show)}>Column visibility &#9660;</p>
                                             <div class="dropdown-content" style={{display:show?"block":"none"}}>
                                                 <p>#</p>
-                                                <p>Username</p>
-                                                <p>Full Name</p>
-                                                <p>Email ID</p>
-                                                <p>Mobile Number</p>
-                                                <p>Reg. Date</p>
+                                                <p>College Name</p>
+                                                <p>College Code</p>
+                                                <p>Added By</p>
+                                                <p>Creation Date</p>
                                                 <p>Action</p>
                                             </div>
                                         </div>
@@ -46,18 +44,16 @@ function ManageSubadmin(){
                                 <thead>
                                     <tr>
                                         <th>#</th>
-                                        <th>Username</th>
-                                        <th>Full Name</th>
-                                        <th>Email ID</th>
-                                        <th>Mobile Number</th>
-                                        <th>Reg. Date</th>
+                                        <th>College Name</th>
+                                        <th>College Code</th>
+                                        <th>Added By</th>
+                                        <th>Creation Date</th>
                                         <th>Action</th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                     <tr>
                                          <td></td>  {/* {append your data here} */}
-                                        <td></td>
                                         <td></td>
                                         <td></td>
                                         <td></td>
@@ -82,4 +78,4 @@ function ManageSubadmin(){
                 </div>
     </>
 }
-export default ManageSubadmin
+export default ManageCollege

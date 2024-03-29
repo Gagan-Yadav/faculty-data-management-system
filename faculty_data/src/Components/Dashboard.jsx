@@ -36,9 +36,9 @@ function Dashboard(){
                 </div><hr />
                 <div className="dashboard-items">
                     <div  className="menu-items">
-                        <div className="menu-items-left-side">
+                       <Link to="/admin/dashboard-page"><div className="menu-items-left-side">
                         <img src={Dashbord} alt="" style={{width:"8%"}}/><span className="dashboard-text">Dashboard</span>   
-                            </div>   
+                            </div>  </Link>
                     </div>
                     <div  className="menu-items" onClick={()=>setSubadmin(!subadmin)}>
                             <div className="menu-items-left-side">
@@ -69,9 +69,9 @@ function Dashboard(){
                        <Link to="/admin/add-college"> <div className="add-manage-circle">
                         <div className="add-button"></div><span>Add</span>
                         </div></Link>
-                        <div className="add-manage-circle">
+                      <Link to="/admin/manage-college"><div className="add-manage-circle">
                         <div className="add-button"></div><span>Manage</span>
-                        </div>
+                        </div></Link>
                     </div>
                     <div  className="menu-items" onClick={()=>setFaculty(!faculty)}>
                          <div className="menu-items-left-side">
@@ -85,9 +85,9 @@ function Dashboard(){
                     <Link to="/admin/add-faculty">    <div className="add-manage-circle">
                         <div className="add-button"></div><span>Add</span>
                         </div></Link>
-                        <div className="add-manage-circle">
+                      <Link to="/admin/manage-faculty"><div className="add-manage-circle">
                         <div className="add-button"></div><span>Manage</span>
-                        </div>
+                        </div></Link>
                     </div>
                     <div  className="menu-items" onClick={()=>setPages(!pages)}>
                            <div className="menu-items-left-side">
@@ -98,12 +98,12 @@ function Dashboard(){
                             </div>
                     </div>
                     <div className="show-and-hide-menu" style={{display:pages?"block":"none"}}>
-                        <div className="add-manage-circle">
+                       <Link to="/admin/about-us"><div className="add-manage-circle">
                         <img src={About} alt="" style={{width:"10%"}}/><span>About us</span>
-                        </div>
-                        <div className="add-manage-circle">
+                        </div></Link>
+                        <Link to="/admin/contact-us"><div className="add-manage-circle">
                           < img src={Contact} alt="" style={{width:"10%"}}/><span>Contact us</span>
-                        </div>
+                        </div></Link>
                     </div>
                     <div  className="menu-items" onClick={()=>setSetting(!setting)} >
                             <div className="menu-items-left-side">
@@ -115,15 +115,15 @@ function Dashboard(){
                     </div>
 
                     <div className="show-and-hide-menu" style={{display:setting?"block":"none"}}>
-                        <div className="add-manage-circle">
+                      <Link to="/admin/profile"> <div className="add-manage-circle">
                         <img src={User} alt="" style={{width:"9%"}}/><span>Profile</span>
-                        </div>
-                        <div className="add-manage-circle">
+                        </div></Link>
+                       <Link to="/admin/change-password"><div className="add-manage-circle">
                         <img src={Key} alt="" style={{width:"9%"}}/><span>Change Password</span>
-                        </div>
-                        <div className="add-manage-circle">
+                        </div></Link>
+                       <Link to="/admin"><div className="add-manage-circle">
                         <img src={Logout} alt="" style={{width:"9%"}}/><span>Logout</span>
-                        </div>
+                        </div></Link>
                     </div>
 
                 </div>
@@ -137,7 +137,6 @@ function Dashboard(){
                                     <img src={Fullscreen} alt="" style={{width:"3%"}}/>
                                 </div>
                              </div>
-            
             </div>
         </div>
     </>
