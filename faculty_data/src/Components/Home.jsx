@@ -8,7 +8,7 @@ function Home(){
                 <div className="home-admin">
                    <div className="home-admin-header">
                     <div><span className="sub-admin-heading">Dashboard</span></div>
-                    <div><Link to="/admin/dashboard"><span  className="dashboard-navigate">Dashboard</span> </Link>/ <span  className="dashboard-navigate">Home</span></div>
+                    <div><Link to="/admin/dashboard" className="routing-link"><span  className="dashboard-navigate" style={{color:"blue"}}>Dashboard</span> </Link>/ <span  className="dashboard-navigate" style={{color:"black"}}>Home</span></div>
                    </div>
                    <div id="home-admin-form-container">
                                <div>

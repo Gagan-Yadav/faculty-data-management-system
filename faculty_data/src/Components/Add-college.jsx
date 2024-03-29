@@ -7,7 +7,7 @@ function AddCollege(){
                 <div className="add-sub-admin">
                    <div className="add-sub-admin-header">
                     <div><span className="sub-admin-heading">Add College</span></div>
-                    <div><Link to="/admin/dashboard"><span  className="dashboard-navigate">Dashboard</span> </Link>/ <span  className="dashboard-navigate">Add College</span></div>
+                    <div><Link to="/admin/dashboard" className="routing-link"><span  className="dashboard-navigate">Dashboard</span> </Link>/ <span  className="dashboard-navigate">Add College</span></div>
                    </div>
                    <div id="add-subadmin-form-container">
                                 <div className="form-heading-container">

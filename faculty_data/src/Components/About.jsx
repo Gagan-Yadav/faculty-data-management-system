@@ -2,6 +2,7 @@ import Navbar1 from "../Navbar/Navbar1.jsx"
 import image4 from "../assets/image4.jpg"
 import image5 from "../assets/image5.jpg"
 import "../Styling/About.css"
+import Footer from "../Components/Footer.jsx"
 function About(){
     return <>
         <div>
@@ -23,6 +24,7 @@ function About(){
                         <img src={image5} alt=""  style={{width:"80%",borderRadius:"10px"}}/>
                     </div>
                 </div>
+                <Footer/>
         </div>
     </>
 }

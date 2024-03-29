@@ -17,9 +17,9 @@ function RoutesComp(){
                 <Route path="/" element={<Navbar/>}/>
                 <Route path="/about" element={<About/>}/>
                 <Route path="/faculties" element={<Faculties/>}/>
+                <Route path="/contact" element={<Contact/>}/>
                 <Route path="/admin" element={<Admin/>}/>
-                <Route path="/admin/dashboard" element={<Dashboard/>}/>{/*temp*/}
-                <Route path="/admin/dashboard-page" element={<Home/>}/>
+                <Route path="/admin/dashboard" element={<Home/>}/>
                 <Route path="/admin/add-sub-admin" element={<AddSubAdmin/>}/>
                 <Route path="/admin/add-college" element={<AddCollege/>}/>
                 <Route path="/admin/add-faculty" element={<AddFaculty/>}/>
@@ -43,4 +43,5 @@ import AdminContact from "../Components/Admin-contact"
 import AdminProfile from "../Components/Admin-profile"
 import AdminPassword from "../Components/Admin-chagepwd"
 import Home from "../Components/Home"
+import Contact from "../Components/Contact"
 export default RoutesComp

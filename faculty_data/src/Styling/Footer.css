@@ -1,0 +1,28 @@
+*{
+    font-family: sans-serif;
+    color: white;
+}
+#footer-main-container{
+    display: flex;
+   justify-content: space-evenly;
+   background-color: blue;
+}
+#footer-main-container>div{
+    width: 25%;
+}
+#footer-main-container>div>p{
+    font-size: 14px;
+    padding: 5px;
+}
+.links>div{
+    padding: 5px 5px 5px 5px;
+    cursor: pointer;
+}
+.footer-script{
+    border: 2px solid gray;
+    background-color: gray;
+    text-align: center;
+}
+.links{
+    text-decoration: none;
+}

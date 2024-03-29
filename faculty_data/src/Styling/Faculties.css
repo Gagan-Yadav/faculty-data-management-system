@@ -7,3 +7,11 @@
     z-index: 1;
     margin-top: -14%;
 }
+.faculties-details{
+   height: 40vh;
+   margin-top: 5%;
+}
+.faculties-details>h1{
+    color: black;
+    text-align: center;
+}

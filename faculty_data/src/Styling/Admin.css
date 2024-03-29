@@ -1,9 +1,10 @@
+
 .admin-login{
     height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
-    background: rgb(186, 222, 244);
+    background:linear-gradient(red,yellow,red) ;
 }
 .admin-main-container{
     width: 25%;
@@ -13,10 +14,15 @@
     border-radius: 10px;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
     background-color: white;
+    border-top: 5px solid blue;
+}
+.admin-main-container>p{
+    color: black;
 }
 .admin-header{
     font-weight: 800;
     font-size: 35px;
+    color: black;
 }
 .username{
     width: 80%;
@@ -49,7 +55,11 @@
 }
 .forgot-icon{
     margin-bottom: -4%;
+    color: blue;
 }
 .home-icon{
     text-decoration: none;
+}
+.home-navigator{
+    color:  blue;
 }

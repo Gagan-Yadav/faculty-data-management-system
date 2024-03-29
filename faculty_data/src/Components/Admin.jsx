@@ -19,7 +19,7 @@ function Admin(){
                     </div>
                     <div className="home-and-forgot">
                         <p className="forgot-icon"><span className="admin-images"><img src={Forgot} alt="" style={{width:"7%"}} /></span>Forgot Password</p>
-                      <Link to="/" className="home-icon"><p><span className="admin-images"><img src={HomeImg} alt="" style={{width:"7%"}} /></span>Home</p></Link>
+                      <Link to="/" className="home-icon"><p className="home-navigator"><span className="admin-images"><img src={HomeImg} alt="" style={{width:"7%"}} /></span>Home</p></Link>
                     </div>
             </div>
      </div>

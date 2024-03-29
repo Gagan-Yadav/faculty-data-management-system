@@ -24,6 +24,8 @@ function Dashboard(){
     let [pages,setPages]=useState(false);
     let [setting,setSetting]=useState(false);
 
+    
+
     return <>
         <div className="dashboard-main-container">
             <div className="left-container">
@@ -36,7 +38,7 @@ function Dashboard(){
                 </div><hr />
                 <div className="dashboard-items">
                     <div  className="menu-items">
-                       <Link to="/admin/dashboard-page"><div className="menu-items-left-side">
+                       <Link to="/admin/dashboard" className="routing-link"><div className="menu-items-left-side">
                         <img src={Dashbord} alt="" style={{width:"8%"}}/><span className="dashboard-text">Dashboard</span>   
                             </div>  </Link>
                     </div>
@@ -50,10 +52,10 @@ function Dashboard(){
                             </div>
                     </div>
                     <div className="show-and-hide-menu" style={{display:subadmin?"block":"none"}}>
-                    <Link to='/admin/add-sub-admin'>  <div className="add-manage-circle">
+                    <Link to='/admin/add-sub-admin' className="routing-link">  <div className="add-manage-circle">
                        <div className="add-button"></div><span>Add</span>
                         </div></Link>
-                        <Link to="/admin/manage-sub-admin"><div className="add-manage-circle">
+                        <Link to="/admin/manage-sub-admin" className="routing-link"><div className="add-manage-circle">
                         <div className="add-button"></div><span>Manage</span>
                         </div></Link>
                     </div>
@@ -66,10 +68,10 @@ function Dashboard(){
                             </div>
                     </div>
                     <div className="show-and-hide-menu" style={{display:college?"block":"none"}}>
-                       <Link to="/admin/add-college"> <div className="add-manage-circle">
+                       <Link to="/admin/add-college" className="routing-link"> <div className="add-manage-circle">
                         <div className="add-button"></div><span>Add</span>
                         </div></Link>
-                      <Link to="/admin/manage-college"><div className="add-manage-circle">
+                      <Link to="/admin/manage-college" className="routing-link"><div className="add-manage-circle">
                         <div className="add-button"></div><span>Manage</span>
                         </div></Link>
                     </div>
@@ -82,10 +84,10 @@ function Dashboard(){
                             </div>
                     </div>
                     <div className="show-and-hide-menu" style={{display:faculty?"block":"none"}}>
-                    <Link to="/admin/add-faculty">    <div className="add-manage-circle">
+                    <Link to="/admin/add-faculty" className="routing-link">    <div className="add-manage-circle">
                         <div className="add-button"></div><span>Add</span>
                         </div></Link>
-                      <Link to="/admin/manage-faculty"><div className="add-manage-circle">
+                      <Link to="/admin/manage-faculty" className="routing-link"><div className="add-manage-circle">
                         <div className="add-button"></div><span>Manage</span>
                         </div></Link>
                     </div>
@@ -98,10 +100,10 @@ function Dashboard(){
                             </div>
                     </div>
                     <div className="show-and-hide-menu" style={{display:pages?"block":"none"}}>
-                       <Link to="/admin/about-us"><div className="add-manage-circle">
+                       <Link to="/admin/about-us" className="routing-link"><div className="add-manage-circle">
                         <img src={About} alt="" style={{width:"10%"}}/><span>About us</span>
                         </div></Link>
-                        <Link to="/admin/contact-us"><div className="add-manage-circle">
+                        <Link to="/admin/contact-us" className="routing-link"><div className="add-manage-circle">
                           < img src={Contact} alt="" style={{width:"10%"}}/><span>Contact us</span>
                         </div></Link>
                     </div>
@@ -115,13 +117,13 @@ function Dashboard(){
                     </div>
 
                     <div className="show-and-hide-menu" style={{display:setting?"block":"none"}}>
-                      <Link to="/admin/profile"> <div className="add-manage-circle">
+                      <Link to="/admin/profile" className="routing-link"> <div className="add-manage-circle">
                         <img src={User} alt="" style={{width:"9%"}}/><span>Profile</span>
                         </div></Link>
-                       <Link to="/admin/change-password"><div className="add-manage-circle">
+                       <Link to="/admin/change-password" className="routing-link"><div className="add-manage-circle">
                         <img src={Key} alt="" style={{width:"9%"}}/><span>Change Password</span>
                         </div></Link>
-                       <Link to="/admin"><div className="add-manage-circle">
+                       <Link to="/admin" className="routing-link"><div className="add-manage-circle" >
                         <img src={Logout} alt="" style={{width:"9%"}}/><span>Logout</span>
                         </div></Link>
                     </div>
@@ -131,7 +133,7 @@ function Dashboard(){
             <div className="right-container">
                              <div className="right-side-sub-container">
                                 <div>
-                                    <img src={Hamburger} alt="" style={{width:"3%"}}/>
+                                    <img src={Hamburger} alt="" style={{width:"3%"}} />
                                 </div>
                                 <div className="min-max-screen">
                                     <img src={Fullscreen} alt="" style={{width:"3%"}}/>

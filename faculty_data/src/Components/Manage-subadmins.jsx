@@ -10,7 +10,7 @@ function ManageSubadmin(){
                 <div className="manage-sub-admin">
                    <div className="manage-sub-admin-header">
                     <div><span className="manage-admin-heading">Manage Sub Admins</span></div>
-                    <div><Link to="/admin/dashboard"><span  className="dashboard-navigate">Home</span> </Link>/ <span  className="dashboard-navigate">Manage Sub Admin</span></div>
+                    <div><Link to="/admin/dashboard" className="routing-link"><span  className="dashboard-navigate">Home</span> </Link>/ <span  className="dashboard-navigate">Manage Sub Admin</span></div>
                    </div>
                    <div id="manage-subadmin-form-container">
                                 <p>Sub Admin Details</p>

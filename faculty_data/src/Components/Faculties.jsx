@@ -1,6 +1,7 @@
 import "../Styling/Faculties.css"
 import Navbar1 from "../Navbar/Navbar1.jsx"
 import image4 from "../assets/image4.jpg"
+import Footer from "../Components/Footer.jsx"
 function Faculties(){
     return <>
       <div>
@@ -18,9 +19,13 @@ function Faculties(){
         </div>
 
         <div>
-        {/*  faculty details after the entry  */}
-        <p>/*  faculty details after the entry  */</p>
+        
+          <div className="faculties-details">
+                          <h1>Faculty details</h1>
+          </div>
+
         </div>
+        <Footer/>
       </div>
     </>
 }

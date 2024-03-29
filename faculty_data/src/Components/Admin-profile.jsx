@@ -7,7 +7,7 @@ function AdminProfile(){
                 <div className="add-sub-admin">
                    <div className="add-sub-admin-header">
                     <div><span className="sub-admin-heading">My Profile</span></div>
-                    <div><Link to="/admin/dashboard"><span  className="dashboard-navigate">Dashboard</span> </Link>/ <span  className="dashboard-navigate">Profile</span></div>
+                    <div><Link to="/admin/dashboard" className="routing-link"><span  className="dashboard-navigate">Dashboard</span> </Link>/ <span  className="dashboard-navigate">Profile</span></div>
                    </div>
                    <div id="add-subadmin-form-container">
                                 <div className="form-heading-container">

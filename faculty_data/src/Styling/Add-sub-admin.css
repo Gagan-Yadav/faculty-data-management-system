@@ -65,8 +65,12 @@
     border: none;
     background-color: rgb(26, 181, 242);
     margin: 2% 0;
+    cursor: pointer;
 }
 #gender{
     width: 97.5%;
     height: 45px;
+}
+.routing-link{
+    text-decoration: none;
 }
