@@ -2,8 +2,11 @@ import "../Styling/Home.css"
 import Dashboard from "./Dashboard"
 import { Link, useNavigate } from "react-router-dom"
 import Next from "../assets/next.png"
+import { useContext } from "react";
+import { AuthContext } from "../Context/AuthContext";
 function Home(){
     let navigate =useNavigate();
+    let {len,dataLength,range}=useContext(AuthContext)
         return <>
              <Dashboard/>
                 <div className="home-admin">
@@ -13,21 +16,21 @@ function Home(){
                    </div>
                    <div id="home-admin-form-container">
                                <div>
-                                <h1>0</h1>
+                                <h1>{range}</h1>
                                 <p>Sub Admins</p>
                                 <div onClick={()=>navigate("/admin/manage-sub-admin")}>
                                     <div><span>More Info</span><img src={Next} alt="" style={{width:"3%"}}/></div>
                                 </div>
                                </div>
                                <div>
-                                <h1>0</h1>
+                                <h1>{dataLength}</h1>
                                 <p>Listed Faculities</p>
                                 <div onClick={()=>navigate("/admin/manage-faculty")}>
                                     <div><span>More Info</span><img src={Next} alt="" style={{width:"3%"}}/></div>
                                 </div>
                                </div>
                                <div>
-                                <h1>0</h1>
+                                <h1>{len}</h1>
                                 <p>Listed Colleges</p>
                                 <div onClick={()=>navigate("/admin/manage-college")}>
                                     <div><span>More Info</span><img src={Next} alt="" style={{width:"3%"}}/></div>

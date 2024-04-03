@@ -1,10 +1,17 @@
 import "../Styling/Manage-sub-admin.css"
 import Dashboard from "./Dashboard"
 import { Link } from "react-router-dom"
-import UpDown from "../assets/up-and-down-arrow.png"
-import { useState } from "react"
+import { useContext, useEffect, useState } from "react"
+import { AuthContext } from "../Context/AuthContext"
+import DeleteIcon from "../assets/delete.png"
+import EditIcon from "../assets/edit.png"
 function ManageSubadmin(){
     let [show,setShow] =useState(false)
+    let {answer,range,getFacultyList}=useContext(AuthContext)
+    
+    useEffect(function(){
+                getFacultyList()
+    },[])
     return <>
      <Dashboard/>
                 <div className="manage-sub-admin">
@@ -22,7 +29,7 @@ function ManageSubadmin(){
                                         <div>Excel</div>
                                         <div>PDF</div>
                                         <div>Print</div>
-                                        <div class="visibility-container">
+                                        <div className="visibility-container">
                                             <p className="dropbtn" onClick={()=>setShow(!show)}>Column visibility &#9660;</p>
                                             <div class="dropdown-content" style={{display:show?"block":"none"}}>
                                                 <p>#</p>
@@ -55,22 +62,29 @@ function ManageSubadmin(){
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <tr>
-                                         <td></td>  {/* {append your data here} */}
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                    </tr>
+                                
+                                     {answer && answer.map((ele,index)=>(
+                                              <tr>
+                                                <td>{index+1}</td>
+                                                <td>{ele.username}</td>
+                                                <td>{ele.fullname}</td>
+                                                <td>pending</td>
+                                                <td>{ele.phone}</td>
+                                                <td>{ele.created_at}</td>
+                                                <td style={{textAlign:"center",width:"10%"}}>
+                                                    <img src={EditIcon} alt=""  style={{width:"15%",margin:"5px"}}/>
+                                                    <img src={DeleteIcon} alt="" style={{width:"15%",margin:"5px"}} />
+                                                    </td>
+                                              </tr>
+))}                                
+                                    
                                 </tbody>
                             </table>
                          </div>
 
                          <div className="sub-admin-pagination">
                             <div>
-                                <p>Showing 0 to 0 of 0 entries</p>
+                                <p>Showing 0 to 0 of {range} entries</p>
                             </div>
                             <div className="prev-next-button">
                                 <button>Previous</button>
