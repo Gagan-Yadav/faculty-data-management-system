@@ -5,7 +5,7 @@ function Footer(){
             <div id="footer-main-container">
                     <div>
                         <h1>About Us</h1><hr />
-                        <p>Welcome to the Faculty Data Management System (FDMS), your comprehensive solution for streamlining faculty-related processes
+                        <p id="about-us">Welcome to the Faculty Data Management System (FDMS), your comprehensive solution for streamlining faculty-related processes
                              within educational institutions. At FDMS, we understand the critical role that faculty members play in shaping the academic landscape.
                               Our platform is meticulously crafted to empower institutions with the tools necessary to optimize faculty management, enhance collaboration,
                                and foster academic excellence.</p><hr />
@@ -28,7 +28,7 @@ function Footer(){
                     </div>
             </div>
             <div className="footer-script">
-                 <p>Online Faculty Data Management System</p>
+                 <p>Online Faculty Data Management System, ©2024 Aman Yadav | All Rights Reserved</p>
             </div>
            </>
 }

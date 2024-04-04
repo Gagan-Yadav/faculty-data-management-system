@@ -118,3 +118,10 @@
     text-decoration: none;
     color: white;
 }
+.no-data-cell{
+  width: 100%;
+    padding: 10px;
+    text-align: center;
+   margin-left: 250%;
+   color: gray;
+}

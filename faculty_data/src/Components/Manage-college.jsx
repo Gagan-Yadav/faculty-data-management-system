@@ -3,10 +3,26 @@ import Dashboard from "./Dashboard";
 import { Link } from "react-router-dom";
 import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../Context/AuthContext";
-
+import DeleteIcon from "../assets/delete.png"
+import EditIcon from "../assets/edit.png"
+import axios from "axios";
 function ManageCollege() {
   let [show, setShow] = useState(false);
-  let {incoming,len,manageCollege}=useContext(AuthContext)
+  let {incoming,len,manageCollege,setIncomingData}=useContext(AuthContext)
+ 
+async function handleDelete(college_code,college_name){
+         let confirmed=window.confirm(`Are you sure you want to delete ${college_name} college details?`)
+         if(confirmed){
+          try {
+            await axios.get(`http://localhost:7000/api/college/remove-college?college_code=${college_code}`)
+            setIncomingData(incoming.filter(item=>item.college_code!==college_code))
+            alert(`${college_name} college details deleted successfully`)
+          } catch (error) {
+            console.log(error);
+          }
+         }
+}
+
   useEffect(() => {
     manageCollege();
   }, []);
@@ -64,7 +80,9 @@ function ManageCollege() {
                   <th>Action</th>
                 </tr>
               </thead>
-              <tbody>
+             {
+              len>0?(
+                <tbody>
                 {incoming.map((ele, index) => (
                   <tr key={index}>
                     <td>{index + 1}</td>
@@ -72,10 +90,15 @@ function ManageCollege() {
                     <td>{ele.college_code}</td>
                     <td>pending</td>
                     <td>{ele.created_at}</td>
-                    <td>we will add</td>
+                    <td style={{textAlign:"center",width:"10%"}}>
+                                                   <img src={EditIcon} alt=""  style={{width:"15%",margin:"5px"}}/>
+                                                   <img src={DeleteIcon} alt="" style={{width:"15%",margin:"5px"}} onClick={()=>handleDelete(ele.college_code,ele.college_name)} />
+                                                   </td>
                   </tr>
                 ))}
               </tbody>
+              ):(<tbody><div className="no-data-cell">No data found</div></tbody>)
+             }
             </table>
           </div>
 

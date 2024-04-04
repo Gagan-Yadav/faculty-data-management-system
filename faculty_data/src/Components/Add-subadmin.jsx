@@ -1,8 +1,9 @@
-import React, { useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import axios from "axios";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import Dashboard from "./Dashboard";
 import "../Styling/Add-sub-admin.css";
+import { AuthContext } from "../Context/AuthContext";
 
 function AddSubAdmin() {
   let [username, setUsername] = useState('');
@@ -10,7 +11,8 @@ function AddSubAdmin() {
   let [address, setAddress] = useState('');
   let [phone, setPhone] = useState('');
   let [password, setPassword] = useState('');
-
+  let naviage=useNavigate()
+  let {answer}=useContext(AuthContext)
   async function addSubAdmin() {
     try {
       let ans = await axios.post("http://localhost:7000/api/sub-admin/add-sub-admin", {
@@ -20,13 +22,19 @@ function AddSubAdmin() {
         phone,
         password
       });
-     if(ans.status==200){
-        alert("Sub admin added successfully")
+     if(ans.data.status==400){
+      
+      alert(ans.data.message)
+     }
+    else  if(ans.status==200 && ans.data.status!==400){
+        alert("Sub Admin Added Successfully")
      }
     } catch (error) {
       console.log(error);
     }
   }
+
+
 
   function handleSubmit(event) {
     event.preventDefault();
@@ -59,7 +67,7 @@ function AddSubAdmin() {
               <label htmlFor="fullname">Full Name</label>
               <input type="text" id="fullname" className="form-inputs" placeholder="Enter Sub-Admin Full Name" value={fullname} onChange={(e) => setFull(e.target.value)} /><br />
               <label htmlFor="address">Email address</label>
-              <input type="text" id="address" className="form-inputs" placeholder="Enter Email" value={address} onChange={(e) => setAddress(e.target.value)} /><br />
+              <input type="email" id="address" className="form-inputs" placeholder="Enter Email" value={address} onChange={(e) => setAddress(e.target.value)} /><br />
               <label htmlFor="phone">Mobile Number</label>
               <input type="tel" id="phone" className="form-inputs" placeholder="Enter Number" value={phone} onChange={(e) => setPhone(e.target.value)} /><br />
               <label htmlFor="password">Password</label>

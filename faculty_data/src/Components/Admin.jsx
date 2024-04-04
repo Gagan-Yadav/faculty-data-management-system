@@ -6,27 +6,39 @@ import { useState } from "react";
 import axios from "axios";
 
 function Admin() {
+  
   let navigate = useNavigate();
   let [username, setUsername] = useState('');
   let [password, setPassword] = useState('');
-
-  async function adminProf() {
+  var [message, setMessage] = useState('');
+  var [message2, setMessage2] = useState('');
+  async function adminProf(res) {
     try {
-      await axios.post('http://localhost:7000/api/admin/admin-login', {
+      const response = await axios.post('http://localhost:7000/api/admin/admin-login', {
         username,
         password
       });
-     console.log("login successful");
-      navigate("/admin/dashboard");
+      var responseData = response.data; 
+
+      responseData.message=="success"?( alert("Succesful Login"), navigate("/admin/dashboard")):(setMessage("*Invalid Email and Password"))
+
+      // responseData.valid =="true"?(setMessage("")):();
+      
+      
     } catch (error) {
       console.log(error);
     }
+   
   }
+
 
   function handleSubmit(e) {
-    navigate("/admin/dashboard");
+    e.preventDefault()
+    adminProf();
   }
-
+function handleInput(){
+  setMessage('')
+}
   return (
     <div className="admin-login">
       <div className="admin-main-container">
@@ -35,14 +47,17 @@ function Admin() {
         <p>Sign in to start your session</p>
         <form onSubmit={handleSubmit}>
           <input
-            type="text"
+            type="email"
             id="username"
             name="username"
             placeholder="Username"
             className="username"
             value={username}
             onChange={(e) => setUsername(e.target.value)}
-          />
+           onInput={handleInput}
+          /><br/>
+  
+          <br/>
           <input
             type="password"
             id="password"
@@ -52,6 +67,8 @@ function Admin() {
             value={password}
             onChange={(e) => setPassword(e.target.value)}
           />
+          <br />
+             <span id="message">{message}</span><br />
           <div className="singin-button-container">
             <button type="submit" className="singin-button">
               Sign In
@@ -61,12 +78,12 @@ function Admin() {
         <div className="home-and-forgot">
           <Link to="/admin/recovery-password" className="home-icon">
             <p className="forgot-icon">
-              <span className="admin-images"><img src={Forgot} alt="" style={{width:"7%"}} /></span>Forgot Password
+              <span className="admin-images"><img className="icon" src={Forgot} alt="" style={{width:"7%"}} /></span>Forgot Password
             </p>
           </Link>
           <Link to="/" className="home-icon">
             <p className="home-navigator">
-              <span className="admin-images"><img src={HomeImg} alt="" style={{width:"7%"}} /></span>Home
+              <span className="admin-images"><img className="icon" src={HomeImg} alt="" style={{width:"7%"}} /></span>Home
             </p>
           </Link>
         </div>

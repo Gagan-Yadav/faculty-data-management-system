@@ -8,7 +8,20 @@ import EditIcon from "../assets/edit.png";
 import axios from "axios";
 function ManageFaculty() {
     let [show, setShow] = useState(false);
-    let {incdata,dataLength,manageFaculty,setIncoming}=useContext(AuthContext)
+    let {incdata,dataLength,manageFaculty,setIncomingData}=useContext(AuthContext)
+
+    async function handleDelete(id,faculty_name){
+        let confirmed=window.confirm(`Are you sure you want to remove the details of ${faculty_name} faculty?`)
+        if(confirmed){
+            try {
+                await axios.get(`http://localhost:7000/api/faculty/remove-faculty?id=${id}`)
+                 setIncomingData(incdata.filter(item=>item.id!==id))
+                alert(`${faculty_name} faculty removed`)
+            } catch (error) {
+                console.log(error);
+            }
+        }
+    }
 
     useEffect(() => {
         manageFaculty();
@@ -67,24 +80,26 @@ function ManageFaculty() {
                                     <th>Action</th>
                                 </tr>
                             </thead>
-                            <tbody>
-                                {incdata.map((ele, index) => (
-                                    <tr key={index}>
-                                        <td>{index + 1}</td>
-                                        <td>{ele.faculty_name}</td>
-                                        <td>{ele.gender}</td>
-                                        <td>{ele.phone}</td>
-                                        <td>{ele.email}</td>
-                                        <td>{ele.date_of_joining}</td>
-                                        <td>pending</td>
-                                        <td>{ele.created_at}</td>
-                                        <td style={{ textAlign: "center", width: "10%" }}>
-                                                <img src={EditIcon} alt="" style={{ width: "15%", margin: "3px" }} />
-                                                <img src={DeleteIcon} alt="" style={{ width: "15%", margin: "3px" }} />
-                                                </td>
-                                    </tr>
-                                ))}
-                            </tbody>
+                           {dataLength>0?(
+                             <tbody>
+                             {incdata.map((ele, index) => (
+                                 <tr key={index}>
+                                     <td>{index + 1}</td>
+                                     <td>{ele.faculty_name}</td>
+                                     <td>{ele.gender}</td>
+                                     <td>{ele.phone}</td>
+                                     <td>{ele.email}</td>
+                                     <td>{ele.date_of_joining}</td>
+                                     <td>pending</td>
+                                     <td>{ele.created_at}</td>
+                                     <td style={{ textAlign: "center", width: "10%" }}>
+                                             <img src={EditIcon} alt="" style={{ width: "15%", margin: "3px" }} />
+                                             <img src={DeleteIcon} alt="" style={{ width: "15%", margin: "3px" }} onClick={()=>handleDelete(ele.id, ele.faculty_name)} />
+                                             </td>
+                                 </tr>
+                             ))}
+                         </tbody>
+                           ):(<tbody><div className="no-data-cell" style={{marginLeft:"460%"}}>No data found</div></tbody>)}
                         </table>
                     </div>
                     <div className="sub-admin-pagination">

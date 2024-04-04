@@ -7,7 +7,7 @@ function Navbar(){
       <nav>
           <div id="main-container-navbar">
             <div className="nav-logo">
-                      <div><strong>Online College</strong><br/>Faculty Data Management System</div>
+                      <div id="heading">Faculty Data Management System</div>
             </div>
             <div className="nav-items">
                        <Link to="/"  className="routing-link"><div className="items">HOME</div></Link>

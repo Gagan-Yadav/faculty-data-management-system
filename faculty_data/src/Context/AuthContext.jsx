@@ -39,16 +39,19 @@ async function manageFaculty() {
     let [range,setRange]=useState(0)
     async function getFacultyList(){
         try {
-            let incoming=await axios.get('http://localhost:7000/api/sub-admin/sub-admin-list')
-            setAnswer(incoming.data.data)
-            setRange(incoming.data.data.length)
+            let resp=await axios.get('http://localhost:7000/api/sub-admin/sub-admin-list')
+            console.log(resp);
+            setAnswer(resp.data.data)
+            
+            setRange(resp.data.data.length)
+          
         } catch (error) {
             console.log(error);
         }
     }
 //end of manage subadmin
     return <>
-       <AuthContext.Provider value={{count,setCount,incoming,manageCollege,incdata,dataLength,manageFaculty,range,setRange,answer,len,getFacultyList}}>
+       <AuthContext.Provider value={{count,setCount,incoming,manageCollege,incdata,dataLength,manageFaculty,range,setRange,answer,len,getFacultyList,setAnswer,setIncomingData}}>
             {children}
        </AuthContext.Provider>
     </>
