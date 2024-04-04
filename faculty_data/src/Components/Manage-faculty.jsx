@@ -25,6 +25,7 @@ function ManageFaculty() {
 
     useEffect(() => {
         manageFaculty();
+
     }, []);
 
     return (
@@ -88,7 +89,7 @@ function ManageFaculty() {
                                      <td>{ele.faculty_name}</td>
                                      <td>{ele.gender}</td>
                                      <td>{ele.phone}</td>
-                                     <td>{ele.email}</td>
+                                     <td>{ele.address}</td>
                                      <td>{ele.date_of_joining}</td>
                                      <td>pending</td>
                                      <td>{ele.created_at}</td>

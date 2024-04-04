@@ -7,7 +7,7 @@ function AddFaculty(){
    let [college_name,setCollege]=useState('')
    let [faculty_name,setFname]=useState('')
    let [gender,setGender]=useState('')
-   let [email,setEmail]=useState('')
+   let [address,setAddress]=useState('')
    let [phone,setPhone]=useState('')
    let [designation,setDesignation]=useState('')
    let [department,setDepartment]=useState('')
@@ -20,7 +20,7 @@ function AddFaculty(){
             college_name,
             faculty_name,
             gender,
-            email,
+            address,
             phone,
             designation,
             department,
@@ -35,7 +35,12 @@ function AddFaculty(){
     }
     function handleSubmit(){
         addFaculty()
+        console.log(image);
     }
+    const handleImageUpload = (e) => {
+        const selectedImage = e.target.files[0];
+        setImage(selectedImage)
+      };
     return <>
      <Dashboard/>
                 <div className="add-sub-admin">
@@ -59,8 +64,8 @@ function AddFaculty(){
                                                     <option value="Male">Male</option>
                                                     <option value="Female">Female</option>
                                                 </select>
-                                                <label htmlFor="">Email address</label>
-                                                <input type="email" name="" id=""  className="form-inputs" placeholder="Enter Email" value={email} onChange={(e)=>setEmail(e.target.value)} /><br />
+                                                <label htmlFor="">Address</label>
+                                                <input type="text" name="" id=""  className="form-inputs" placeholder="Enter Email" value={address} onChange={(e)=>setAddress(e.target.value)} /><br />
                                                 <label htmlFor="">Mobile Number</label>
                                                 <input type="tel" name="" id="" className="form-inputs"  placeholder="Enter Number" value={phone} onChange={(e)=>setPhone(e.target.value)}/><br />
                                                 <label htmlFor="">Designation</label>
@@ -78,7 +83,7 @@ function AddFaculty(){
                                                   <label htmlFor="">Academic Qualification</label>
                                                   <textarea name="" id="" className="form-inputs" placeholder="Academic Qualification" value={qualification} onChange={(e)=>setQualification(e.target.value)}></textarea>
                                                   <label htmlFor="">Profile Pic <span style={{color:"red"}}>(Only jpg | jpeg | png | gif format allowed)</span></label>
-                                                <input type="file" name="" id="" className="form-inputs"accept="image/*" value={image} onChange={(e)=>setImage(e.target.files[0])}/><br />
+                                                <input type="file" name="" id="" className="form-inputs"accept="image/*" onChange={handleImageUpload}/><br />
                                            
                                         <button className="add-subadmin-submit-button" type="submit">Submit</button>
                                         </form>

@@ -25,9 +25,8 @@ async function manageFaculty() {
     try {
         let incoming = await axios.get('http://localhost:7000/api/faculty/faculty-list');
         setIncoming(incoming.data.data); 
-        setDataLength(incoming.data.data.length );
-        console.log(dataLength)
-        console.log(incdata);
+        setDataLength(incoming.data.data.length )
+       console.log(incoming.data);
     } catch (error) {
         console.log(error);
     }
