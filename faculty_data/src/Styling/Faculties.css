@@ -8,7 +8,7 @@
     margin-top: -14%;
 }
 .faculties-details{
-   height: 40vh;
+   /* height: 40vh; */
    margin-top: 1%;
 margin-bottom: 5%;
 }
@@ -17,18 +17,32 @@ margin-bottom: 5%;
     margin: auto;
     display: grid;
     grid-template-columns: repeat(4,1fr);
-    gap: 5%;
+    /* gap: 5%; */
     margin-bottom: 90px;
   
+}
+.fsubdetails>div{
+    border-radius: 10px;
+    padding: 10px;
+    margin: 10px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    border-top: 8px solid red;
+    border-bottom: 8px solid red;
+}
+.fsubdetails>div:hover{
+    transition: 0.5s all ease-in-out;
+    scale: 1.1;
 }
 .sub-container-for-faculty-details{
     border-radius: 10px;
     width: 100%;
-text-align: center;
-font-family: sans-serif;
-box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    text-align: center;
+    font-family: sans-serif;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
 .faculties-details>h1{
     color: black;
     text-align: center;
+    margin-top: 5%;
+
 }

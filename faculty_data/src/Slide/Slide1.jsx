@@ -14,7 +14,7 @@ function Slide1(){
        <div className="upper-container">
         <h1 className="heading"><span className="two-words">Online College</span> Faculty Data <br />Management System</h1>
          <p className="slide-ptag">View the details of college Faculty.</p>
-         <button class="glow-on-hover" type="button" onClick={()=>navigate("/contact")}>Contact Us</button>
+         <button class="glow-on-hover" type="button" onClick={()=>navigate("/contact")} >Contact Us</button>
        
        </div>
 

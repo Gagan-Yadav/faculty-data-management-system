@@ -3,8 +3,9 @@ import Dashboard from "./Dashboard";
 import { Link } from "react-router-dom";
 import axios from "axios"
 import { useState } from "react";
+import swal from 'sweetalert';
 function AddFaculty(){
-   let [college_name,setCollege]=useState('')
+   let [college_id,setCollege]=useState('')
    let [faculty_name,setFname]=useState('')
    let [gender,setGender]=useState('')
    let [address,setAddress]=useState('')
@@ -15,9 +16,12 @@ function AddFaculty(){
    let [date_of_joining,setDate]=useState('')
    let [qualification,setQualification]=useState('')
    let [image,setImage]=useState(null)
+   let [salary,setSalary]=useState(0)
+   let [dob,setDob]=useState("")
+   let [gmail,setGmail]=useState("")
     async function addFaculty(){
         let answer=await axios.post("http://localhost:7000/api/faculty/add-faculty",{
-            college_name,
+            college_id,
             faculty_name,
             gender,
             address,
@@ -27,15 +31,24 @@ function AddFaculty(){
             job_natures,
             date_of_joining,
             qualification,
-            image
+            salary,
+            dob,
+            gmail
         })
         if(answer.status==200){
-            alert("Faculty added successfully")
+            let text=`${faculty_name} added as a faculty!`
+            swal({
+                title: "Good job!",
+                text: text,
+                icon: "success",
+                button: "Ok!",
+              });
         }
+        
     }
-    function handleSubmit(){
+    function handleSubmit(e){
+        e.preventDefault()
         addFaculty()
-        console.log(image);
     }
     const handleImageUpload = (e) => {
         const selectedImage = e.target.files[0];
@@ -54,8 +67,8 @@ function AddFaculty(){
                                 </div>
                                 <div className="form-details-container">
                                         <form action="" id="add-sub-admin-form" onSubmit={handleSubmit}>
-                                                <label htmlFor="">College Name</label>
-                                                <input type="text" name="" id="" className="form-inputs"  placeholder="Enter College Name"  value={college_name} onChange={(e)=>setCollege(e.target.value)}/>
+                                                <label htmlFor="">College ID</label>
+                                                <input type="text" name="" id="" className="form-inputs"  placeholder="Enter College ID"  value={college_id} onChange={(e)=>setCollege(e.target.value)}/>
                                                 <label htmlFor="">Faculty Name</label>
                                                 <input type="text" name="" id=""  className="form-inputs" placeholder="Enter Faculty Full Name" value={faculty_name} onChange={(e)=>setFname(e.target.value)}/>
                                                 <label htmlFor="">Gender</label>
@@ -65,9 +78,16 @@ function AddFaculty(){
                                                     <option value="Female">Female</option>
                                                 </select>
                                                 <label htmlFor="">Address</label>
-                                                <input type="text" name="" id=""  className="form-inputs" placeholder="Enter Email" value={address} onChange={(e)=>setAddress(e.target.value)} /><br />
+                                                <input type="text" name="" id=""  className="form-inputs" placeholder="Enter Address" value={address} onChange={(e)=>setAddress(e.target.value)} /><br />
                                                 <label htmlFor="">Mobile Number</label>
                                                 <input type="tel" name="" id="" className="form-inputs"  placeholder="Enter Number" value={phone} onChange={(e)=>setPhone(e.target.value)}/><br />
+                                                <label htmlFor="">Salary</label>
+                                                <input type="tel" name="" id="" className="form-inputs"  placeholder="Enter Salary" value={salary} onChange={(e)=>setSalary(e.target.value)}/><br />
+                                                <label htmlFor="">Date Of Birth</label>
+                                                <input type="date" name="" id="" className="form-inputs"  value={dob} onChange={(e)=>setDob(e.target.value)}/><br />
+                                                <label htmlFor="">Email</label>
+                                                <input type="tel" name="" id="" className="form-inputs"  placeholder="Enter Email" value={gmail} onChange={(e)=>setGmail(e.target.value)}/><br />
+                                              
                                                 <label htmlFor="">Designation</label>
                                                 <input type="tel" name="" id="" className="form-inputs"  placeholder="Enter Designation" value={designation} onChange={(e)=>setDesignation(e.target.value)}/><br />
                                                 <label htmlFor="">Department</label>

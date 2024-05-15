@@ -4,15 +4,20 @@ import { Link, useNavigate } from "react-router-dom";
 import Dashboard from "./Dashboard";
 import "../Styling/Add-sub-admin.css";
 import { AuthContext } from "../Context/AuthContext";
-
+import swal from 'sweetalert';
 function AddSubAdmin() {
   let [username, setUsername] = useState('');
   let [fullname, setFull] = useState('');
   let [address, setAddress] = useState('');
   let [phone, setPhone] = useState('');
   let [password, setPassword] = useState('');
+  let [dob,setDob]=useState("")
+  let [salary,setSalary]=useState('')
+  let [locations,setLocation]=useState("")
+  let [pata,setPata]=useState("")
   let naviage=useNavigate()
   let {answer}=useContext(AuthContext)
+  
   async function addSubAdmin() {
     try {
       let ans = await axios.post("http://localhost:7000/api/sub-admin/add-sub-admin", {
@@ -20,6 +25,9 @@ function AddSubAdmin() {
         fullname,
         address,
         phone,
+         dob,
+         salary,
+         pata,
         password
       });
      if(ans.data.status==400){
@@ -27,7 +35,13 @@ function AddSubAdmin() {
       alert(ans.data.message)
      }
     else  if(ans.status==200 && ans.data.status!==400){
-        alert("Sub Admin Added Successfully")
+      let text=`${fullname} added as a sub-admin`
+      swal({
+        title: "Good job!",
+        text: text,
+        icon: "success",
+        button: "Ok!",
+      });
      }
     } catch (error) {
       console.log(error);
@@ -68,6 +82,15 @@ function AddSubAdmin() {
               <input type="text" id="fullname" className="form-inputs" placeholder="Enter Sub-Admin Full Name" value={fullname} onChange={(e) => setFull(e.target.value)} /><br />
               <label htmlFor="address">Email address</label>
               <input type="email" id="address" className="form-inputs" placeholder="Enter Email" value={address} onChange={(e) => setAddress(e.target.value)} /><br />
+             
+              <label htmlFor="dob">Date Of Birth</label>
+              <input type="date" id="dob" className="form-inputs" value={dob} onChange={(e) => setDob(e.target.value)} /><br />
+              <label htmlFor="salary">Salary</label>
+              <input type="number" id="salary" className="form-inputs" placeholder="Enter salary" value={salary} onChange={(e) => setSalary(e.target.value)} /><br />
+              <label htmlFor="location">Location</label>
+              <input type="text" id="location" className="form-inputs" placeholder="Enter Address" value={pata} onChange={(e) => setPata(e.target.value)} /><br />
+             
+
               <label htmlFor="phone">Mobile Number</label>
               <input type="tel" id="phone" className="form-inputs" placeholder="Enter Number" value={phone} onChange={(e) => setPhone(e.target.value)} /><br />
               <label htmlFor="password">Password</label>

@@ -63,7 +63,7 @@
     border-bottom-left-radius: 5px;
     border-bottom-right-radius: 5px;
     height: 6vh;
-    background-color: gray;
+    background-color: rgb(87, 86, 86);
     cursor: pointer;
 }
 #home-admin-form-container>div>div>div>span{

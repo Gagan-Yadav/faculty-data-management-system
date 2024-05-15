@@ -2,11 +2,23 @@ import "../Styling/Faculties.css"
 import Navbar1 from "../Navbar/Navbar1.jsx"
 import image4 from "../assets/image4.jpg"
 import Footer from "../Components/Footer.jsx"
-import { useContext } from "react"
-import { AuthContext } from "../Context/AuthContext.jsx"
+import axios from "axios"
+import { useEffect, useState } from "react"
+import Boy from "../assets/boy.png"
 function Faculties(){
-  let {incdata}=useContext(AuthContext)
-  console.log(incdata);
+  let [fdata,setfdata]=useState([])
+  async function getDataOfFaculties(){
+    try {
+      let resp=await axios.get("http://localhost:7000/api/faculty/faculty-list")
+      console.log(resp.data.data);
+      setfdata(resp.data.data)
+    } catch (error) {
+      console.log(error);
+    }
+  }
+ useEffect(function(){
+    getDataOfFaculties()
+ },[])
     return <>
       <div>
         <div>
@@ -25,15 +37,25 @@ function Faculties(){
         <div>
         
           <div className="faculties-details">
-            <h1>Faculties Details</h1>
+            <h1>!! Faculties Details !!</h1>
                            <div className="fsubdetails">
-                           {incdata.map((ele)=>(
-                                      <div key={ele.id} className="sub-container-for-faculty-details">
-                                        <img src={URL.createObjectURL(ele.image)} alt="selected" />
-                                            <h4>{ele.faculty_name}</h4>
-                                            <p>{ele.address}</p>
-                                      </div>
-                            ))}
+                            {
+                              fdata.map((ele,ind)=>(
+                                <div key={ind}>
+                                  <img src={Boy} alt="" style={{width:"30%",marginLeft:"32%"}}/>
+                                     <h4><strong>Faculty Name: </strong>{ele.faculty_name}</h4>
+                                     <p><strong>Address: </strong>{ele.address}</p>
+                                     <p><strong>Mobile NO.: </strong>{ele.phone}</p>
+                                     <p><strong>Gender: </strong>{ele.gender}</p>
+                                     <p><strong>Email: </strong>{ele.gmail}</p>
+                                     <p><strong>College ID: </strong>{ele.college_id}</p>
+                                     <p><strong>Job Nature: </strong>{ele.job_natures}</p>
+                                     <p><strong>Department: </strong>{ele.department}</p>
+                                     <p><strong>Designation: </strong>{ele.designation}</p>
+                                     <p><strong>Joining Date: </strong>{ele.date_of_joining}</p>
+                                </div>
+                              ))
+                            }
                            </div>
           </div>
 

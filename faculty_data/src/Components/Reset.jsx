@@ -16,7 +16,7 @@ function Reset(){
                    <div className="singin-button-container">
                        <button className="singin-button" onClick={()=>navigate("/admin")}>Reset</button>
                    </div>
-                  <Link to="/admin" className="routes"> <div className="signin">Sign In</div></Link>
+                  <Link to="/admin" className="routes"> <div className="singin-button">Sign In</div></Link>
            </div>
     </div>
     </>

@@ -28,7 +28,7 @@ function Footer(){
                     </div>
             </div>
             <div className="footer-script">
-                 <p>Online Faculty Data Management System, ©2024 Aman Yadav | All Rights Reserved</p>
+                 <p>Online Faculty Data Management System, ©2024 Aman Yadav,Beekseh Ahirwar, Durgesh Kumar and Uday Meena | All Rights Reserved</p>
             </div>
            </>
 }

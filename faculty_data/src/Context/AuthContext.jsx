@@ -26,7 +26,6 @@ async function manageFaculty() {
         let incoming = await axios.get('http://localhost:7000/api/faculty/faculty-list');
         setIncoming(incoming.data.data); 
         setDataLength(incoming.data.data.length )
-       console.log(incoming.data);
     } catch (error) {
         console.log(error);
     }
@@ -39,7 +38,6 @@ async function manageFaculty() {
     async function getFacultyList(){
         try {
             let resp=await axios.get('http://localhost:7000/api/sub-admin/sub-admin-list')
-            console.log(resp);
             setAnswer(resp.data.data)
             
             setRange(resp.data.data.length)

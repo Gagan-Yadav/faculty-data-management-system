@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import Dashboard from "./Dashboard";
 import { useState } from "react";
 import axios from "axios";
-
+import swal from 'sweetalert';
 function AddCollege() {
   let [college_name, setCollegeName] = useState("");
   let [college_code, setCollegeCode] = useState("");
@@ -15,7 +15,13 @@ function AddCollege() {
         college_name
       });
      if(ans.status==200){
-      alert("College added successfully")
+      let text=`${college_name} college added successfully!`
+      swal({
+        title: "Good job!",
+        text: text,
+        icon: "success",
+        button: "Ok!",
+      });
      }
     } catch (error) {
       console.log(error);

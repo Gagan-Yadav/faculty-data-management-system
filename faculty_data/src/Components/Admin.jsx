@@ -4,23 +4,45 @@ import Forgot from "../assets/forgot.png";
 import { Link, useNavigate } from "react-router-dom";
 import { useState } from "react";
 import axios from "axios";
-
+import RingLoader from "react-spinners/RingLoader";
+import { toast } from 'react-toastify';
 function Admin() {
   
   let navigate = useNavigate();
+  let [loading, setLoading] = useState(false);
   let [username, setUsername] = useState('');
   let [password, setPassword] = useState('');
   var [message, setMessage] = useState('');
   var [message2, setMessage2] = useState('');
   async function adminProf(res) {
+    setLoading(true);
     try {
       const response = await axios.post('http://localhost:7000/api/admin/admin-login', {
         username,
         password
       });
+      setLoading(false)
       var responseData = response.data; 
 
-      responseData.message=="success"?( alert("Succesful Login"), navigate("/admin/dashboard")):(setMessage("*Invalid Email and Password"))
+      responseData.message=="success"?( toast.success(`Login Successfull!`, {
+        position: "bottom-right",
+        autoClose: 4000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "dark",
+        }), navigate(`/admin/dashboard/`)):(setMessage("*Invalid Email or Password"),toast.error(`Login Failed!`, {
+          position: "bottom-right",
+          autoClose: 4000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "dark",
+          }))
 
       // responseData.valid =="true"?(setMessage("")):();
       
@@ -39,8 +61,10 @@ function Admin() {
 function handleInput(){
   setMessage('')
 }
+
   return (
     <div className="admin-login">
+  
       <div className="admin-main-container">
         <h1 className="admin-header">Admin Login</h1>
         <hr />
@@ -89,7 +113,7 @@ function handleInput(){
         </div>
       </div>
     </div>
-  );
+  )
 }
 
 export default Admin;

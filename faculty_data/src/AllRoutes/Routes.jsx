@@ -31,6 +31,11 @@ function RoutesComp(){
                 <Route path="/admin/profile" element={<AdminProfile/>}/>
                 <Route path="/admin/change-password" element={<AdminPassword/>}/>
                 <Route path="/admin/recovery-password" element={<Reset/>}/>
+                <Route path="/admin/edit-subadmin-details/:username" element={<EditSubAdmin/>}/>
+                <Route path="/admin/view-sub-admin-detail/:username" element={<ViewSubAdmin/>}/>
+                <Route path="/admin/edit-college-details/:college_code" element={<EditCollege/>}/>
+                <Route path="/admin/edit-faculty-details/:faculty_id" element={<EditFaculty/>}/>
+                <Route path="/admin/view-faculty-details/:id" element={<ViewFaculty/>}/>
             </Routes>
        </div>
     </>
@@ -46,4 +51,9 @@ import AdminPassword from "../Components/Admin-chagepwd"
 import Home from "../Components/Home"
 import Contact from "../Components/Contact"
 import Reset from "../Components/Reset"
+import EditSubAdmin from "../Components/Edit-subadmin"
+import EditFaculty from "../Components/Edit-faculty"
+import EditCollege from "../Components/Edit-college"
+import ViewSubAdmin from "../Components/View-subadmin"
+import ViewFaculty from "../Components/View-faculty"
 export default RoutesComp

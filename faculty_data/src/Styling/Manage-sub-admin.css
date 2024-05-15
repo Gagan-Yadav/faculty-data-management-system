@@ -125,3 +125,40 @@
    margin-left: 250%;
    color: gray;
 }
+#view-main-container{
+    width: 100%;
+    margin: 2%;
+ 
+}
+.view-main-container-sub{
+     width: 50%;
+     height: auto;
+     border-radius: 15px;
+     border-bottom: 5px solid blue;
+     border-top: 5px solid blue;
+     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+.showing-id{
+    border: 4px solid red;
+    width: 10%;
+    height: 8vh;
+    border-radius: 5px;
+    margin: 10px;
+    float: right;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 900;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+.all-detail-viewed{
+    text-align: center;
+}
+#edit-result{
+    color: rgb(0, 255, 76);
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+    font-weight: 700;
+  padding: 10px;
+}
