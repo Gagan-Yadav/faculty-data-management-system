@@ -4,7 +4,7 @@ const express   = require('express');
     bodyParser  = require('body-parser'),
     app         = express();
     corsOptions = { origin: "*" },
-    PORT        = process.env.PORT || 7000;
+    
     
     require("./config/dbConfig");
 
