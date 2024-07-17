@@ -1,1 +1,0 @@
-# faculty-data-management-system
